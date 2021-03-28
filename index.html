@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	    <meta charset="utf-8">
+		<meta charset="utf-8">
 		<title>$TITLE</title>
-    	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    	<meta property="og:image" content="thumbnail.gif">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<meta property="og:image" content="thumbnail.gif">
 		<link rel="stylesheet" href="./style.css">
 		<script src="./p5.min.js"></script>
 	</head>
@@ -13,13 +13,13 @@
 		<script>
 			/* 
 			NFT Information for HicEtNunc.xyz: 
-
+			
 			Title: 
 			$TITLE
-
+			
 			Description:
 			$DESCRIPTION
-
+			
 			Tags: 
 			$TAGS
 			*/
@@ -38,24 +38,23 @@
 			let target, pos;
 
 			function setup() {
-			    createCanvas(windowHeight, windowHeight);
-			    pg = createGraphics(sW, sH, WEBGL);
-			    
-			    pixelDensity(1);	
-			    noCursor();
-			    frameRate(60);
-			    
-			    noStroke();
+				createCanvas(windowHeight, windowHeight);
+				pg = createGraphics(sW, sH, WEBGL);
+				
+				pixelDensity(1);
+				noCursor();
+				frameRate(60);
+				
+				noStroke();
 				fill(0, 15);
-				background(0);	
-			    pg.strokeWeight(1);
+				background(0);
+				pg.strokeWeight(1);
 
 				target = createVector(0, 0, 0);
 				pos = createVector(0, 0, 0);
 			}
 
 			function draw() {
-
 				pos = p5.Vector.lerp(pos, target, lerpSpeed);
 				if (pos.dist(target) < range * 2) {
 					let x = random(-sW/2, sW/2);
@@ -66,17 +65,17 @@
 
 				if (random(0,1) < bgOdds) pg.background(0);
 
-			    pg.stroke(0, 245, 255);
-			    pg.fill(0, 127, 255, 130);
-			    
-			    drawLines();
+				pg.stroke(0, 245, 255);
+				pg.fill(0, 127, 255, 130);
+				
+				drawLines();
 
-			    pg.stroke(255, 245, 0);
-			    pg.fill(255, 127, 0, 130);
-			    
-			    drawLines();
+				pg.stroke(255, 245, 0);
+				pg.fill(255, 127, 0, 130);
+				
+				drawLines();
 
-			    image(pg, 0, 0, width, height);
+				image(pg, 0, 0, width, height);
 			}
 
 			function windowResized() {
@@ -84,17 +83,17 @@
 			}
 
 			function drawLines() {
-			    pg.push();
-			    pg.translate(pos.x, pos.y, pos.z);
-			    pg.beginShape(LINES);
-			    for (let i = 0; i < numLines; i++) {
-			    	let x = random(-range, range);
-			    	let y = random(-range, range);
-			    	let z = random(-range, range);
-			    	pg.vertex(x, y, z);
-			    }  
-			    pg.endShape();
-			    pg.pop();
+				pg.push();
+				pg.translate(pos.x, pos.y, pos.z);
+				pg.beginShape(LINES);
+				for (let i = 0; i < numLines; i++) {
+					let x = random(-range, range);
+					let y = random(-range, range);
+					let z = random(-range, range);
+					pg.vertex(x, y, z);
+				}  
+				pg.endShape();
+				pg.pop();
 			}
 		</script>
 	</body>

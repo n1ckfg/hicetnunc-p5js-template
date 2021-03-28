@@ -1,21 +1,21 @@
 html, body {
 	width: 100%;
 	height: 100%;
-  	margin: 0px;
-  	padding: 0px;
+	margin: 0px;
+	padding: 0px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-html {	
+html {
 	flex-direction: column;
 }
 
 body {
 	flex-direction: row;
 	overflow: hidden;
-    touch-action: none;
+	touch-action: none;
 	/*background: radial-gradient(#efefef, #000000);*/
 	background: black;
 }
@@ -26,10 +26,10 @@ canvas {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
 }
